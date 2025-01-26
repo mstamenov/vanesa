@@ -3,7 +3,8 @@ const products = [
         id: 1,
         name: "Продукт 1",
         price: 199,
-        image: "https://pulsefit.bg/uploads/tinymce/58069.jpg"
+        image: "https://pulsefit.bg/uploads/tinymce/58069.jpg",
+        description: "Описание на продукт 1"
     },
     {
         id: 2,

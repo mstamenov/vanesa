@@ -188,9 +188,18 @@
                         <p>Цена: ${product.price} лв.</p>
                         <div class="product-buttons">
                             <button>Добави в количката</button>
-                            <button>Виж повече</button>
+                            <button class="promo-button" onclick="openModal('modalProduct${product.id}')">
+                    Виж повече
+                  </button>
                         </div>
                     </div>
+                    <div id="modalProduct${product.id}" class="modal">
+                <div class="modal-content">
+                  <span class="close-button" onclick="closeModal('modalProduct${product.id}')">&times;</span>
+                  <h2>${product.name}</h2>
+                  <p>${product?.description ?? "Липсва описание"}</p>
+                </div>
+                </div>
                     `;
               document.write(productCard);
             });
@@ -216,14 +225,14 @@
                     <span class="old-price">${promotion.oldPrice} лв.</span>
                     <span class="new-price">${promotion.newPrice} лв.</span>
                   </p>
-                  <button class="promo-button" onclick="openModal('modal${promotion.id}')">
+                  <button class="promo-button" onclick="openModal('modalPromo${promotion.id}')">
                     Виж повече
                   </button>
                   </div>
               </div>
-              <div id="modal${promotion.id}" class="modal">
+              <div id="modalPromo${promotion.id}" class="modal">
                 <div class="modal-content">
-                  <span class="close-button" onclick="closeModal('modal${promotion.id}')">&times;</span>
+                  <span class="close-button" onclick="closeModal('modalPromo${promotion.id}')">&times;</span>
                   <h2>${promotion.name}</h2>
                   <p>${promotion.description}</p>
                 </div>
