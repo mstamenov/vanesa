@@ -1,0 +1,437 @@
+@import url('http://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 4rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #bc9667;
+    --second-color: #edeae3;
+    --text-color: #1b1b1b;
+    --bg-color: #fff;
+}
+
+body {
+    color: var(--text-color);
+}
+
+header {
+position: fixed;
+width: 100%;
+top: 0;
+right: 0;
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 18px;
+transition: 0.5s linear;
+background: var(--text-color);
+height: 70px; /* Фиксирана височина */
+}
+.site-header {
+background: #333;
+padding: 10px 20px;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+}
+
+.navigation {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-list {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+gap: 20px;
+}
+
+.nav-list li {
+display: inline;
+}
+
+.nav-list a {
+color: #fff;
+text-decoration: none;
+font-size: 1rem;
+padding: 8px 12px;
+transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-list a:hover {
+background: #007bff;
+color: #fff;
+border-radius: 5px;
+}
+
+.logo img {
+max-width: 180px; /* Увеличете ширината на логото */
+height: auto; /* Поддържа пропорциите */
+object-fit: contain; /* Осигурява добро мащабиране без изкривяване */
+margin: auto 0; /* Центрира логото вътре в хедъра */
+}
+
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+padding: 8px 17px;
+color: var(--bg-color);
+font-size: 1rem;
+text-transform: uppercase;
+font-weight: 500;
+transition: 0.2s all linear;
+}
+
+.navbar a:hover {
+font-weight: 600; /* Удебеляване при ховър */
+color: var(--main-color); /* Променяме цвета за визуална обратна връзка */
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.header-icon .bx {
+    color: var(--bg-color);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header-icon .bx:hover {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    color: var(--bg-color);
+    font-size: 24px;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
+}
+
+.search-box {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    background: var(--bg-color);
+    width: 100%;
+    display: none; /* Initially hidden */
+}
+
+.search-box input {
+    padding: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+.search-box input::placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.home {
+width: 100%;
+min-height: 100vh;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('https://i.pinimg.com/736x/06/e7/9e/06e79ee2fcc742226c21160e4d3cfbe3.jpg') no-repeat center center;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 100px;
+color: var(--bg-color);
+}
+
+
+.home-text {
+    max-width: 600px;
+}
+
+.home-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--bg-color);
+}
+
+.home-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--second-color);
+}
+
+.home-text .btn {
+display: inline-block;
+background: none; /* Без цвят */
+color: white; /* Бял текст */
+padding: 10px 20px;
+text-transform: uppercase;
+font-weight: 700; /* Удебелен текст */
+border: 3px solid white; /* Удебелена рамка */
+border-radius: 0px; /* Остри ъгли */
+text-decoration: none;
+transition: background 0.2s ease, color 0.2s ease; /* Преходи за ефекти */
+cursor: pointer; /* Показва, че е бутон */
+}
+
+/* Ефект при допир с мишката (ховър) */
+.home-text .btn:hover {
+background: rgba(255, 255, 255, 0.1); /* Леко затъмняване на фона */
+color: white; /* Запазва бял текст */
+border-color: white; /* Рамката остава бяла */
+}
+
+/* Ефект при натискане (активиране) */
+.home-text .btn:active {
+background: rgba(255, 255, 255, 0.2); /* По-силно затъмняване на фона */
+color: white; /* Запазва бял текст */
+border-color: white; /* Рамката остава бяла */
+}
+
+.home-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .home-text {
+        margin-bottom: 20px;
+    }
+     .product-buttons button {
+display: inline-block;
+background: none !important; /* Без фон */
+color: black !important; /* Черен текст */
+padding: 50px 60px !important; /* Увеличени вътрешни отстояния */
+text-transform: uppercase !important;
+font-weight: 900 !important; /* По-дебел текст */
+border: 5px solid black !important; /* По-дебела рамка */
+border-radius: 0px !important; /* Остри ръбове */
+font-size: 1.2rem !important; /* По-голям размер на шрифта */
+text-decoration: none !important;
+transition: background 0.2s ease, color 0.2s ease !important; /* Преходи за ефекти */
+cursor: pointer !important; /* Показва, че е бутон */
+}
+/* Ефект при ховър */
+.product-buttons button:hover {
+background: rgba(0, 0, 0, 0.1) !important; /* Леко затъмняване на фона */
+color: black !important; /* Запазва черен текст */
+border-color: black !important; /* Рамката остава черна */
+}
+
+
+/* Ефект при натискане */
+.product-buttons button:active {
+background: rgba(0, 0, 0, 0.2) !important; /* По-силно затъмняване на фона */
+color: black !important; /* Запазва черен текст */
+border-color: black !important; /* Рамката остава черна */
+}
+.product-card img {
+max-width: 80%; /* Намаляваме размера на изображението */
+max-height: 150px; /* Определяме максимална височина */
+object-fit: contain; /* Запазваме пропорциите на изображението */
+margin: 0 auto; /* Центрираме изображението */
+display: block; /* Уверяваме се, че изображението заема отделен ред */
+}
+.product-card img {
+width: auto; /* Задава автоматична ширина, за да запази пропорциите */
+height: 150px; /* Фиксира височината */
+object-fit: cover; /* Изрязва изображението, ако не се вписва във височината */
+border-radius: 10px;
+margin-bottom: 10px;
+}
+.product-card {
+width: 100%; /* Възстановява предишния размер на картата */
+max-width: 250px; /* Задава максимална ширина за картите */
+margin: auto; /* Центрира картите вътре в прозореца */
+}
+}
+.filter-box {
+width: auto; /* Автоматично прилягане по съдържанието */
+padding: 10px; /* Добавя малки вътрешни отстояния */
+border: 1px solid var(--main-color); /* Граница за визуална обратна връзка */
+background-color: var(--bg-color); /* Фонът на кутията */
+display: inline-block; /* Прилепване към съдържанието */
+}
+.promotions-section {
+padding: 20px 10px; /* Намалени вътрешни отстояния за секцията */
+background: linear-gradient(135deg, #fff, #f9f9f9);
+}
+
+.promo-title {
+font-size: 1.5rem; /* Още по-малък текст за заглавието */
+text-align: center;
+color: #333;
+font-weight: bold;
+margin-bottom: 20px;
+text-transform: uppercase;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.promo-grid {
+display: flex;
+justify-content: space-between;
+gap: 10px; /* По-малко разстояние между промоциите */
+flex-wrap: wrap;
+}
+
+.promo-item {
+background: #fff;
+border-radius: 8px; /* По-малко заобляне */
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+overflow: hidden;
+width: 23%; /* Още по-малка ширина за промоциите */
+text-align: center;
+position: relative;
+padding: 10px; /* Леко вътрешно отстояние */
+}
+
+.promo-item:hover {
+transform: scale(1.02); /* Леко увеличение при задържане */
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image img {
+width: 100%;
+height: auto;
+border-bottom: 1px solid #ddd; /* Тънка разделителна линия */
+margin-bottom: 10px;
+}
+
+.promo-badge {
+position: absolute;
+top: 5px; /* По-малко отстояние отгоре */
+left: 5px;
+background: #e63946;
+color: #fff;
+font-size: 0.7rem; /* По-малък шрифт */
+font-weight: bold;
+padding: 3px 6px; /* По-малки вътрешни отстояния */
+border-radius: 4px;
+text-transform: uppercase;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.promo-details {
+padding: 5px; /* Минимално вътрешно отстояние */
+}
+
+.promo-name {
+font-size: 0.9rem; /* Намаляване на текста на заглавието */
+color: #333;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.promo-pricing {
+font-size: 0.9rem;
+margin-bottom: 8px;
+}
+
+.old-price {
+text-decoration: line-through;
+color: #888;
+margin-right: 5px;
+}
+
+.new-price {
+color: #000; /* Черен цвят за цените */
+}
+
+.promo-button {
+background-color: #fff; /* Бял фон */
+color: #000; /* Черен текст */
+border: 1px solid #000; /* Черна рамка */
+padding: 5px 10px; /* По-малки бутони */
+font-size: 0.75rem; /* По-малък текст в бутона */
+text-transform: uppercase;
+text-decoration: none;
+border-radius: 4px;
+transition: background-color 0.3s ease, color 0.3s ease;
+margin-top: 5px;
+}
+
+.promo-button:hover {
+background-color: #f0f0f0; /* Светлосиво при задържане */
+color: #000;
+border-color: #333;
+}
+
+@media (max-width: 1024px) {
+.promo-item {
+width: 45%; /* По-малка ширина за таблети */
+}
+}
+
+@media (max-width: 768px) {
+.promo-item {
+width: 100%; /* Пълна ширина за мобилни устройства */
+}
+}
+/* Основни стилове за модалния прозорец */
+.modal {
+display: none; /* Скрит по подразбиране */
+position: fixed;
+z-index: 1000; /* Показва се над останалото съдържание */
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачен фон */
+justify-content: center;
+align-items: center;
+}
+
+/* Съдържанието на модала */
+.modal-content {
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+width: 80%;
+max-width: 500px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+text-align: center;
+}
+
+/* Бутон за затваряне */
+.close-button {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 1.5rem;
+font-weight: bold;
+color: #333;
+cursor: pointer;
+}
+
