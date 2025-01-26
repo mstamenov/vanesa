@@ -1,70 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitness Equipment Site</title>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <!--add js reference-->
     <script src="js/data.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <a href="#" class="logo">
-            <img src="C:\Users\Vanesa\Downloads\dinamics-removebg-preview.png" alt="Logo">
-        </a>
-        <ul class="navbar">
-            <li><a href="#home">Начало</a></li>
-            <li><a href="#products">Продукти</a></li>
-			<li><a href="#promotions">Промоции</a></li> 
-			<li><a href="#about">За нас</a></li>
-            <li><a href="#contacts">Контакти</a></li>
-        </ul>
-        <div class="header-icon">
-            <i class='bx bx-cart-alt'></i>
-            <i class='bx bx-search' id="search-icon"></i>
-        </div>
-        <div class="search-box">
-            <input type="search" name="" id="" placeholder="Search Here...">
-        </div>
+      <a href="#" class="logo">
+        <img
+          src="C:\Users\Vanesa\Downloads\dinamics-removebg-preview.png"
+          alt="Logo"
+        />
+      </a>
+      <ul class="navbar">
+        <li><a href="#home">Начало</a></li>
+        <li><a href="#products">Продукти</a></li>
+        <li><a href="#promotions">Промоции</a></li>
+        <li><a href="#about">За нас</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+      <div class="header-icon">
+        <i class="bx bx-cart-alt"></i>
+        <i class="bx bx-search" id="search-icon"></i>
+      </div>
+      <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here..." />
+      </div>
     </header>
     <section class="home" id="home">
-        <div class="home-text">
-            <h1>Започни деня си <br> с фитнес</h1>
-            <p>Открий най-доброто фитнес оборудване за здравословен и активен начин на живот. Промени рутината си днес!</p>
-            <a href="file:///C:/Users/Vanesa/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8/Tishev/new%201.html#products" class="btn">Пазарувай сега</a>
-        </div>
+      <div class="home-text">
+        <h1>
+          Започни деня си <br />
+          с фитнес
+        </h1>
+        <p>
+          Открий най-доброто фитнес оборудване за здравословен и активен начин
+          на живот. Промени рутината си днес!
+        </p>
+        <a
+          href="file:///C:/Users/Vanesa/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8/Tishev/new%201.html#products"
+          class="btn"
+          >Пазарувай сега</a
+        >
+      </div>
     </section>
-<section id="products" style="padding: 50px 100px; background-color: var(--second-color);">
-    <h2 style="font-size: 2rem; color: var(--text-color); margin-bottom: 20px; text-transform: uppercase; text-align: center;">
+    <section
+      id="products"
+      style="padding: 50px 100px; background-color: var(--second-color)"
+    >
+      <h2
+        style="
+          font-size: 2rem;
+          color: var(--text-color);
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          text-align: center;
+        "
+      >
         Нашите продукти
-    </h2>
-    <div style="display: flex; gap: 20px;">
-        <aside style="flex: 1; max-width: 250px; background: var(--second-color); padding: 20px; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; text-align: center; color: var(--text-color);">Категории</h3>
-            <div style="margin-bottom: 20px;">
-                <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-color);">Цена</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="#" class="filter-btn" data-filter="price-low" style="color: var(--text-color);">Под 100 лв.</a></li>
-                    <li><a href="#" class="filter-btn" data-filter="price-medium" style="color: var(--text-color);">100 - 500 лв.</a></li>
-                    <li><a href="#" class="filter-btn" data-filter="price-high" style="color: var(--text-color);">Над 500 лв.</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-color);">Типове фитнес уреди</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li><a href="#" class="filter-btn" data-filter="cardio" style="color: var(--text-color);">Кардио</a></li>
-                    <li><a href="#" class="filter-btn" data-filter="strength" style="color: var(--text-color);">Силови</a></li>
-                    <li><a href="#" class="filter-btn" data-filter="accessory" style="color: var(--text-color);">Аксесоари</a></li>
-                </ul>
-            </div>
+      </h2>
+      <div style="display: flex; gap: 20px">
+        <aside
+          style="
+            flex: 1;
+            max-width: 250px;
+            background: var(--second-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3
+            style="
+              font-size: 1.5rem;
+              margin-bottom: 20px;
+              text-transform: uppercase;
+              text-align: center;
+              color: var(--text-color);
+            "
+          >
+            Категории
+          </h3>
+          <div style="margin-bottom: 20px">
+            <h4
+              style="
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: var(--text-color);
+              "
+            >
+              Цена
+            </h4>
+            <ul style="list-style: none; padding: 0">
+              <li>
+                <a
+                  href="#"
+                  class="filter-btn"
+                  data-filter="price-low"
+                  style="color: var(--text-color)"
+                  >Под 100 лв.</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="filter-btn"
+                  data-filter="price-medium"
+                  style="color: var(--text-color)"
+                  >100 - 500 лв.</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="filter-btn"
+                  data-filter="price-high"
+                  style="color: var(--text-color)"
+                  >Над 500 лв.</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              style="
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: var(--text-color);
+              "
+            >
+              Типове фитнес уреди
+            </h4>
+            <ul style="list-style: none; padding: 0">
+              <li>
+                <a
+                  href="#"
+                  class="filter-btn"
+                  data-filter="cardio"
+                  style="color: var(--text-color)"
+                  >Кардио</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="filter-btn"
+                  data-filter="strength"
+                  style="color: var(--text-color)"
+                  >Силови</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="filter-btn"
+                  data-filter="accessory"
+                  style="color: var(--text-color)"
+                  >Аксесоари</a
+                >
+              </li>
+            </ul>
+          </div>
         </aside>
-        <div style="flex: 3; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-            <script>
-                products.forEach(product => {
-                    const productCard = `
+        <div
+          style="
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+          "
+        >
+          <script>
+            products.forEach((product) => {
+              const productCard = `
                     <div class="product-card">
                         <img src="${product.image}" alt="${product.name}" class="product-frame">
                         <h4>${product.name}</h4>
@@ -75,173 +192,267 @@
                         </div>
                     </div>
                     `;
-                    document.write(productCard);
-                });
-            </script>
+              document.write(productCard);
+            });
+          </script>
         </div>
-    </div>
-</section>
-<section id="promotions" class="promotions-section">
-    <h2 class="promo-title">Специални промоции</h2>
+      </div>
+    </section>
+    <section id="promotions" class="promotions-section">
+      <h2 class="promo-title">Специални промоции</h2>
 
-    <div class="promo-grid">
-     
-
+      <div class="promo-grid">
         <!-- Промоция 1 -->
-        <div class="promo-item">
-    <div class="promo-image">
-        <img src="https://beautyandpower.eu/6852-large_default/postelka-za-fitnes-i-joga.jpg" alt="Фитнес уред">
-        <span class="promo-badge">-20%</span>
-    </div>
-    <div class="promo-details">
-        <h3 class="promo-name">Фитнес уред</h3>
-        <p class="promo-pricing">
-            <span class="old-price">200 лв.</span>
-            <span class="new-price">160 лв.</span>
-        </p>
-        <button class="promo-button" onclick="openModal('modal1')">Виж повече</button>
-    </div>
-</div>
-		<div id="modal1" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeModal('modal1')">&times;</span>
-        <h2>Фитнес уред</h2>
-        <p>Тази постелка за фитнес и йога е идеална за вашите тренировки. Изработена от висококачествени материали, тя осигурява удобство и стабилност по време на упражненията.</p>
-    </div>
-</div>
-
-        <!-- Промоция 2 -->
-        <div class="promo-item">
-            <div class="promo-image">
-                <img src="path-to-your-image/product2.jpg" alt="Спортни обувки">
-                <span class="promo-badge">-15%</span>
-            </div>
-            <div class="promo-details">
-                <h3 class="promo-name">Спортни обувки</h3>
-                <p class="promo-pricing">
-                    <span class="old-price">120 лв.</span>
-                    <span class="new-price">102 лв.</span>
-                </p>
-                <button class="promo-button">Виж повече</button>
-            </div>
+        <script>
+          promotions.forEach((promotion) => {
+            const promoItem = `
+              <div class="promo-item">
+                <div class="promo-image">
+                  <img src="${promotion.image}" alt="${promotion.name}" />
+                  <span class="promo-badge">-${promotion.discount}%</span>
+                </div>
+                <div class="promo-details">
+                  <h3 class="promo-name">${promotion.name}</h3>
+                  <p class="promo-pricing">
+                    <span class="old-price">${promotion.oldPrice} лв.</span>
+                    <span class="new-price">${promotion.newPrice} лв.</span>
+                  </p>
+                  <button class="promo-button" onclick="openModal(${promotion.id})">
+                    Виж повече
+                  </button>
+                  </div>
+              </div>
+              `;
+              document.write(promoItem);
+            });
+        </script>
+      </div>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal1')"
+            >&times;</span
+          >
+          <h2>Фитнес уред</h2>
+          <p>
+            Тази постелка за фитнес и йога е идеална за вашите тренировки.
+            Изработена от висококачествени материали, тя осигурява удобство и
+            стабилност по време на упражненията.
+          </p>
         </div>
+      </div>
+    </section>
 
-        <!-- Промоция 3 -->
-        <div class="promo-item">
-            <div class="promo-image">
-                <img src="path-to-your-image/product3.jpg" alt="Тренировъчен комплект">
-                <span class="promo-badge">-17%</span>
-            </div>
-            <div class="promo-details">
-                <h3 class="promo-name">Тренировъчен комплект</h3>
-                <p class="promo-pricing">
-                    <span class="old-price">300 лв.</span>
-                    <span class="new-price">250 лв.</span>
-                </p>
-                <button class="promo-button">Виж повече</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-<section id="about" style="background: linear-gradient(135deg, var(--second-color) 50%, var(--main-color) 50%); padding: 50px 100px;">
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-size: 2rem; color: var(--text-color); margin-bottom: 10px; text-transform: uppercase;">За Нас</h2>
-        <p style="font-size: 1rem; color: var(--text-color); max-width: 800px; margin: 0 auto; line-height: 1.6;">
-            
-        </p>
-    </div>
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px;">
+    <section
+      id="about"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--second-color) 50%,
+          var(--main-color) 50%
+        );
+        padding: 50px 100px;
+      "
+    >
+      <div style="text-align: center; margin-bottom: 40px">
+        <h2
+          style="
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+          "
+        >
+          За Нас
+        </h2>
+        <p
+          style="
+            font-size: 1rem;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+          "
+        ></p>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 30px;
+        "
+      >
         <!-- Ляв текст -->
-        <div style="flex: 1; max-width: 500px; padding: 20px;">
-            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-color); margin-bottom: 20px;">
-                <strong>Динамикс ЕООД</strong> – Вашият доверен партньор за иновации в продажбата на фитнес уреди. Подкрепяме активния и здравословен начин на живот, като предлагаме висококачествено оборудване за дома и професионални зали. Ние вярваме, че всеки заслужава възможността да води активен живот. Затова предоставяме надеждно обслужване, сигурни плащания и прозрачни условия, които вдъхват доверие у клиентите.
-            </p>
-            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-color);">
-               
-            </p>
+        <div style="flex: 1; max-width: 500px; padding: 20px">
+          <p
+            style="
+              font-size: 1rem;
+              line-height: 1.6;
+              color: var(--text-color);
+              margin-bottom: 20px;
+            "
+          >
+            <strong>Динамикс ЕООД</strong> – Вашият доверен партньор за иновации
+            в продажбата на фитнес уреди. Подкрепяме активния и здравословен
+            начин на живот, като предлагаме висококачествено оборудване за дома
+            и професионални зали. Ние вярваме, че всеки заслужава възможността
+            да води активен живот. Затова предоставяме надеждно обслужване,
+            сигурни плащания и прозрачни условия, които вдъхват доверие у
+            клиентите.
+          </p>
+          <p
+            style="font-size: 1rem; line-height: 1.6; color: var(--text-color)"
+          ></p>
         </div>
         <!-- Десен елемент със снимки -->
-        <div style="flex: 1; max-width: 400px; position: relative;">
-            <div style="position: relative; z-index: 1;">
-                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Екипът на Динамикс" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);">
-            </div>
-            <div style="position: absolute; top: -20px; left: -20px; z-index: 0; background: var(--main-color); width: 100%; height: 100%; border-radius: 15px; transform: rotate(3deg);"></div>
+        <div style="flex: 1; max-width: 400px; position: relative">
+          <div style="position: relative; z-index: 1">
+            <img
+              src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg"
+              alt="Екипът на Динамикс"
+              style="
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+              "
+            />
+          </div>
+          <div
+            style="
+              position: absolute;
+              top: -20px;
+              left: -20px;
+              z-index: 0;
+              background: var(--main-color);
+              width: 100%;
+              height: 100%;
+              border-radius: 15px;
+              transform: rotate(3deg);
+            "
+          ></div>
         </div>
-    </div>
-    <div style="margin-top: 40px; text-align: center;">
-        <h3 style="font-size: 1.5rem; color: var(--text-color); margin-bottom: 20px; text-transform: uppercase;">Нашият Екип</h3>
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
-            <!-- Ваша снимка -->
-            <div style="text-align: center;">
-                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Вашето име" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);">
-                <h4 style="font-size: 1.2rem; color: var(--text-color);">Вашето име</h4>
-                <p style="font-size: 0.9rem; color: var(--text-color);">Основател и мениджър</p>
-            </div>
-            <!-- Снимки на екипа -->
-            <div style="text-align: center;">
-                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Име на екипа" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);">
-                <h4 style="font-size: 1.2rem; color: var(--text-color);">Име на член от екипа</h4>
-                <p style="font-size: 0.9rem; color: var(--text-color);">Длъжност</p>
-            </div>
-            <div style="text-align: center;">
-                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Име на екипа" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);">
-                <h4 style="font-size: 1.2rem; color: var(--text-color);">Име на член от екипа</h4>
-                <p style="font-size: 0.9rem; color: var(--text-color);">Длъжност</p>
-            </div>
+      </div>
+      <div style="margin-top: 40px; text-align: center">
+        <h3
+          style="
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+          "
+        >
+          Нашият Екип
+        </h3>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+          "
+        >
+          <!-- Ваша снимка -->
+          <div style="text-align: center">
+            <img
+              src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg"
+              alt="Вашето име"
+              style="
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+              "
+            />
+            <h4 style="font-size: 1.2rem; color: var(--text-color)">
+              Вашето име
+            </h4>
+            <p style="font-size: 0.9rem; color: var(--text-color)">
+              Основател и мениджър
+            </p>
+          </div>
+          <!-- Снимки на екипа -->
+          <div style="text-align: center">
+            <img
+              src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg"
+              alt="Име на екипа"
+              style="
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+              "
+            />
+            <h4 style="font-size: 1.2rem; color: var(--text-color)">
+              Име на член от екипа
+            </h4>
+            <p style="font-size: 0.9rem; color: var(--text-color)">Длъжност</p>
+          </div>
+          <div style="text-align: center">
+            <img
+              src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg"
+              alt="Име на екипа"
+              style="
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+              "
+            />
+            <h4 style="font-size: 1.2rem; color: var(--text-color)">
+              Име на член от екипа
+            </h4>
+            <p style="font-size: 0.9rem; color: var(--text-color)">Длъжност</p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-
-
-<script>
-    // JavaScript for filtering products
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const filter = btn.dataset.filter;
-            productCards.forEach(card => {
-                if (filter === 'all' || card.classList.contains(filter)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+    <script>
+      // JavaScript for filtering products
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const productCards = document.querySelectorAll(".product-card");
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const filter = btn.dataset.filter;
+          productCards.forEach((card) => {
+            if (filter === "all" || card.classList.contains(filter)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
         });
-    });
-</script>
-<script>
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'flex'; // Показва модала
-}
+      });
+    </script>
+    <script>
+      function openModal(promoId) {
+        const modal = document.getElementById("modal1");
+        modal.style.display = "flex"; // Показва модала
+      }
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none'; // Скрива модала
-}
+      function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = "none"; // Скрива модала
+      }
 
-// Затваряне на модала при клик извън него
-window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-};
-</script>
-
-    
-
-</body>
+      // Затваряне на модала при клик извън него
+      window.onclick = function (event) {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach((modal) => {
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      };
+    </script>
+  </body>
 </html>
-
