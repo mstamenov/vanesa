@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <!--add js reference-->
     <script src="js/data.js"></script>
+    <script src="js/products.js"></script>
   </head>
   <body>
     <header>
@@ -101,33 +102,17 @@
               Цена
             </h4>
             <ul style="list-style: none; padding: 0">
-              <li>
-                <a
-                  href="#"
-                  class="filter-btn"
-                  data-filter="price-low"
-                  style="color: var(--text-color)"
-                  >Под 100 лв.</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="filter-btn"
-                  data-filter="price-medium"
-                  style="color: var(--text-color)"
-                  >100 - 500 лв.</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="filter-btn"
-                  data-filter="price-high"
-                  style="color: var(--text-color)"
-                  >Над 500 лв.</a
-                >
-              </li>
+              <script>
+                filters.filter(s => s.type === "price").sort((a, b) => a.orderNumber - b.orderNumber).forEach(key => {
+                    const filterItem = `
+                        <li>
+                            <a href="#" class="filter-btn" style="color: var(--text-color)" onclick="filterProducts(${key.id})">
+                                ${key.name}
+                            </a>
+                        </li>`;
+                    document.write(filterItem);
+                });
+              </script>
             </ul>
           </div>
           <div>
@@ -141,34 +126,19 @@
               Типове фитнес уреди
             </h4>
             <ul style="list-style: none; padding: 0">
-              <li>
-                <a
-                  href="#"
-                  class="filter-btn"
-                  data-filter="cardio"
-                  style="color: var(--text-color)"
-                  >Кардио</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="filter-btn"
-                  data-filter="strength"
-                  style="color: var(--text-color)"
-                  >Силови</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="filter-btn"
-                  data-filter="accessory"
-                  style="color: var(--text-color)"
-                  >Аксесоари</a
-                >
-              </li>
+                <script>
+                    filters.filter(s => s.type === "type").sort((a, b) => a.orderNumber - b.orderNumber).forEach(key => {
+                        const filterItem = `
+                            <li>
+                                <a href="#" class="filter-btn" style="color: var(--text-color)" onclick="filterProducts(${key.id})">
+                                    ${key.name}
+                                </a>
+                            </li>`;
+                        document.write(filterItem);
+                    });
+                  </script>
             </ul>
+            <div id="appliedFilters"></div>
           </div>
         </aside>
         <div
@@ -178,33 +148,12 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
           "
-        >
-          <script>
-            products.forEach((product) => {
-              const productCard = `
-                    <div class="product-card">
-                        <img src="${product.image}" alt="${product.name}" class="product-frame">
-                        <h4>${product.name}</h4>
-                        <p>Цена: ${product.price} лв.</p>
-                        <div class="product-buttons">
-                            <button>Добави в количката</button>
-                            <button onclick="openModal('modalProduct${product.id}')">
-                    Виж повече
-                  </button>
-                        </div>
-                    </div>
-                    <div id="modalProduct${product.id}" class="modal">
-                <div class="modal-content">
-                  <span class="close-button" onclick="closeModal('modalProduct${product.id}')">&times;</span>
-                  <h2>${product.name}</h2>
-                  <p>${product?.description ?? "Липсва описание"}</p>
-                </div>
-                </div>
-                    `;
-              document.write(productCard);
-            });
-          </script>
-        </div>
+          id="product-placeholder"
+        />
+        <script>
+            window.products = products;
+            renderProducts();
+        </script>
       </div>
     </section>
     <section id="promotions" class="promotions-section">
@@ -238,8 +187,8 @@
                 </div>
                 </div>
               `;
-              document.write(promoItem);
-            });
+            document.write(promoItem);
+          });
         </script>
       </div>
     </section>
@@ -417,24 +366,6 @@
       </div>
     </section>
 
-    <script>
-      // JavaScript for filtering products
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const productCards = document.querySelectorAll(".product-card");
-      filterButtons.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          const filter = btn.dataset.filter;
-          productCards.forEach((card) => {
-            if (filter === "all" || card.classList.contains(filter)) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-    </script>
     <script>
       function openModal(modalId) {
         const modal = document.getElementById(modalId);
