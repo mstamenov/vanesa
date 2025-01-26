@@ -435,3 +435,12 @@ color: #333;
 cursor: pointer;
 }
 
+img.product-frame {
+    width: 280px;
+    height: 280px;
+}
+
+div.product-card{
+    text-align: center;
+}
+
