@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Equipment Site</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--add js reference-->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/common.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <img
+          src="C:\Users\Vanesa\Downloads\dinamics-removebg-preview.png"
+          alt="Logo"
+        />
+      </a>
+      <ul class="navbar">
+        <li><a href="./index.html">Начало</a></li>
+        <li><a href="#products">Продукти</a></li>
+        <li><a href="#promotions">Промоции</a></li>
+        <li><a href="#about">За нас</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+      <div class="header-icon">
+        <div style="position: relative; display: inline-block;">
+            <i class="bx bx-cart-alt" style="font-size: 24px;"></i>
+            <span id="cartBadge"></span>
+          </div>
+        <i class="bx bx-search" id="search-icon"></i>
+      </div>
+      <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here..." />
+      </div>
+    </header>
+    <section
+      id="about"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--second-color) 50%,
+          var(--main-color) 50%
+        );
+        width: 100%;
+        min-height: 100vh;
+        padding: 60px 120px;
+      "
+    >
+      <div style="text-align: center; margin-bottom: 40px">
+        <h2
+          style="
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+          "
+        >
+        Количка
+        </h2>
+        <div id="cartProducts" class="cart-items" style="display: flex; flex-direction: column;">
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        &copy; Автор на сайта - Ванеса Георгиева
+    </footer>
+    <script>
+        updateCartBadge();
+        renderCart();
+    </script>
+  </body>
+</html>
