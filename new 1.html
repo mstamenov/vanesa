@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Equipment Site</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        @import url('http://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-padding-top: 4rem;
+            scroll-behavior: smooth;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        :root {
+            --main-color: #bc9667;
+            --second-color: #edeae3;
+            --text-color: #1b1b1b;
+            --bg-color: #fff;
+        }
+
+        body {
+            color: var(--text-color);
+        }
+
+       header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    transition: 0.5s linear;
+    background: var(--text-color);
+    height: 70px; /* Фиксирана височина */
+}
+.site-header {
+    background: #333;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-list a:hover {
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.logo img {
+    max-width: 180px; /* Увеличете ширината на логото */
+    height: auto; /* Поддържа пропорциите */
+    object-fit: contain; /* Осигурява добро мащабиране без изкривяване */
+    margin: auto 0; /* Центрира логото вътре в хедъра */
+}
+
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+    padding: 8px 17px;
+    color: var(--bg-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.2s all linear;
+}
+
+.navbar a:hover {
+    font-weight: 600; /* Удебеляване при ховър */
+    color: var(--main-color); /* Променяме цвета за визуална обратна връзка */
+}
+
+        .header-icon {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+        }
+
+        .header-icon .bx {
+            color: var(--bg-color);
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .header-icon .bx:hover {
+            color: var(--main-color);
+        }
+
+        #menu-icon {
+            color: var(--bg-color);
+            font-size: 24px;
+            z-index: 1001;
+            cursor: pointer;
+            display: none;
+        }
+
+        .search-box {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%);
+            background: var(--bg-color);
+            width: 100%;
+            display: none; /* Initially hidden */
+        }
+
+        .search-box input {
+            padding: 20px;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 1rem;
+            color: var(--main-color);
+        }
+
+        .search-box input::placeholder {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .home {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://i.pinimg.com/736x/06/e7/9e/06e79ee2fcc742226c21160e4d3cfbe3.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    color: var(--bg-color);
+}
+
+
+        .home-text {
+            max-width: 600px;
+        }
+
+        .home-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--bg-color);
+        }
+
+        .home-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: var(--second-color);
+        }
+
+        .home-text .btn {
+    display: inline-block;
+    background: none; /* Без цвят */
+    color: white; /* Бял текст */
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 700; /* Удебелен текст */
+    border: 3px solid white; /* Удебелена рамка */
+    border-radius: 0px; /* Остри ъгли */
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease; /* Преходи за ефекти */
+    cursor: pointer; /* Показва, че е бутон */
+}
+
+/* Ефект при допир с мишката (ховър) */
+.home-text .btn:hover {
+    background: rgba(255, 255, 255, 0.1); /* Леко затъмняване на фона */
+    color: white; /* Запазва бял текст */
+    border-color: white; /* Рамката остава бяла */
+}
+
+/* Ефект при натискане (активиране) */
+.home-text .btn:active {
+    background: rgba(255, 255, 255, 0.2); /* По-силно затъмняване на фона */
+    color: white; /* Запазва бял текст */
+    border-color: white; /* Рамката остава бяла */
+}
+
+        .home-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .home {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .home-text {
+                margin-bottom: 20px;
+            }
+			 .product-buttons button {
+    display: inline-block;
+    background: none !important; /* Без фон */
+    color: black !important; /* Черен текст */
+    padding: 50px 60px !important; /* Увеличени вътрешни отстояния */
+    text-transform: uppercase !important;
+    font-weight: 900 !important; /* По-дебел текст */
+    border: 5px solid black !important; /* По-дебела рамка */
+    border-radius: 0px !important; /* Остри ръбове */
+    font-size: 1.2rem !important; /* По-голям размер на шрифта */
+    text-decoration: none !important;
+    transition: background 0.2s ease, color 0.2s ease !important; /* Преходи за ефекти */
+    cursor: pointer !important; /* Показва, че е бутон */
+}
+/* Ефект при ховър */
+.product-buttons button:hover {
+    background: rgba(0, 0, 0, 0.1) !important; /* Леко затъмняване на фона */
+    color: black !important; /* Запазва черен текст */
+    border-color: black !important; /* Рамката остава черна */
+}
+
+
+/* Ефект при натискане */
+.product-buttons button:active {
+    background: rgba(0, 0, 0, 0.2) !important; /* По-силно затъмняване на фона */
+    color: black !important; /* Запазва черен текст */
+    border-color: black !important; /* Рамката остава черна */
+}
+.product-card img {
+    max-width: 80%; /* Намаляваме размера на изображението */
+    max-height: 150px; /* Определяме максимална височина */
+    object-fit: contain; /* Запазваме пропорциите на изображението */
+    margin: 0 auto; /* Центрираме изображението */
+    display: block; /* Уверяваме се, че изображението заема отделен ред */
+}
+.product-card img {
+    width: auto; /* Задава автоматична ширина, за да запази пропорциите */
+    height: 150px; /* Фиксира височината */
+    object-fit: cover; /* Изрязва изображението, ако не се вписва във височината */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.product-card {
+    width: 100%; /* Възстановява предишния размер на картата */
+    max-width: 250px; /* Задава максимална ширина за картите */
+    margin: auto; /* Центрира картите вътре в прозореца */
+}
+        }
+        .filter-box {
+    width: auto; /* Автоматично прилягане по съдържанието */
+    padding: 10px; /* Добавя малки вътрешни отстояния */
+    border: 1px solid var(--main-color); /* Граница за визуална обратна връзка */
+    background-color: var(--bg-color); /* Фонът на кутията */
+    display: inline-block; /* Прилепване към съдържанието */
+}
+.promotions-section {
+    padding: 20px 10px; /* Намалени вътрешни отстояния за секцията */
+    background: linear-gradient(135deg, #fff, #f9f9f9);
+}
+
+.promo-title {
+    font-size: 1.5rem; /* Още по-малък текст за заглавието */
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.promo-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* По-малко разстояние между промоциите */
+    flex-wrap: wrap;
+}
+
+.promo-item {
+    background: #fff;
+    border-radius: 8px; /* По-малко заобляне */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    width: 23%; /* Още по-малка ширина за промоциите */
+    text-align: center;
+    position: relative;
+    padding: 10px; /* Леко вътрешно отстояние */
+}
+
+.promo-item:hover {
+    transform: scale(1.02); /* Леко увеличение при задържане */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd; /* Тънка разделителна линия */
+    margin-bottom: 10px;
+}
+
+.promo-badge {
+    position: absolute;
+    top: 5px; /* По-малко отстояние отгоре */
+    left: 5px;
+    background: #e63946;
+    color: #fff;
+    font-size: 0.7rem; /* По-малък шрифт */
+    font-weight: bold;
+    padding: 3px 6px; /* По-малки вътрешни отстояния */
+    border-radius: 4px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.promo-details {
+    padding: 5px; /* Минимално вътрешно отстояние */
+}
+
+.promo-name {
+    font-size: 0.9rem; /* Намаляване на текста на заглавието */
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.promo-pricing {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 5px;
+}
+
+.new-price {
+    color: #000; /* Черен цвят за цените */
+}
+
+.promo-button {
+    background-color: #fff; /* Бял фон */
+    color: #000; /* Черен текст */
+    border: 1px solid #000; /* Черна рамка */
+    padding: 5px 10px; /* По-малки бутони */
+    font-size: 0.75rem; /* По-малък текст в бутона */
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 5px;
+}
+
+.promo-button:hover {
+    background-color: #f0f0f0; /* Светлосиво при задържане */
+    color: #000;
+    border-color: #333;
+}
+
+@media (max-width: 1024px) {
+    .promo-item {
+        width: 45%; /* По-малка ширина за таблети */
+    }
+}
+
+@media (max-width: 768px) {
+    .promo-item {
+        width: 100%; /* Пълна ширина за мобилни устройства */
+    }
+}
+/* Основни стилове за модалния прозорец */
+.modal {
+    display: none; /* Скрит по подразбиране */
+    position: fixed;
+    z-index: 1000; /* Показва се над останалото съдържание */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачен фон */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Съдържанието на модала */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* Бутон за затваряне */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="C:\Users\Vanesa\Downloads\dinamics-removebg-preview.png" alt="Logo">
+        </a>
+        <ul class="navbar">
+            <li><a href="#home">Начало</a></li>
+            <li><a href="#products">Продукти</a></li>
+			<li><a href="#promotions">Промоции</a></li> 
+			 <li><a href="#about">За нас</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+        </ul>
+        <div class="header-icon">
+            <i class='bx bx-cart-alt'></i>
+            <i class='bx bx-search' id="search-icon"></i>
+        </div>
+        <div class="search-box">
+            <input type="search" name="" id="" placeholder="Search Here...">
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>Започни деня си <br> с фитнес</h1>
+            <p>Открий най-доброто фитнес оборудване за здравословен и активен начин на живот. Промени рутината си днес!</p>
+            <a href="file:///C:/Users/Vanesa/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8/Tishev/new%201.html#products" class="btn">Пазарувай сега</a>
+        </div>
+    </section>
+<section id="products" style="padding: 50px 100px; background-color: var(--second-color);">
+    <h2 style="font-size: 2rem; color: var(--text-color); margin-bottom: 20px; text-transform: uppercase; text-align: center;">
+        Нашите продукти
+    </h2>
+    <div style="display: flex; gap: 20px;">
+        <aside style="flex: 1; max-width: 250px; background: var(--second-color); padding: 20px; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);">
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; text-align: center; color: var(--text-color);">Категории</h3>
+            <div style="margin-bottom: 20px;">
+                <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-color);">Цена</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" class="filter-btn" data-filter="price-low" style="color: var(--text-color);">Под 100 лв.</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="price-medium" style="color: var(--text-color);">100 - 500 лв.</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="price-high" style="color: var(--text-color);">Над 500 лв.</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-color);">Типове фитнес уреди</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" class="filter-btn" data-filter="cardio" style="color: var(--text-color);">Кардио</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="strength" style="color: var(--text-color);">Силови</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="accessory" style="color: var(--text-color);">Аксесоари</a></li>
+                </ul>
+            </div>
+        </aside>
+        <div style="flex: 3; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+           
+            <!-- Продукт 1 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://pulsefit.bg/uploads/tinymce/58069.jpg" alt="Продукт 1" style="width: 280px; height: 280px;">
+                <h4>Продукт 1</h4>
+                <p>Цена: 199 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 2 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://jkfitness.bg/image/cache/catalog/TOORX/Kombiniran-fitnes-ured-MSX-50-TOORX-jkfitness.bg%20(6)-900x900.jpg" alt="Продукт 2" style="width: 280px; height: 280px;">
+                <h4>Продукт 2</h4>
+                <p>Цена: 299 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 3 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://frankfurt.apollo.olxcdn.com/v1/files/lmxovp8ho052-BG/image" alt="Продукт 3" style="width: 280px; height: 280px;">
+                <h4>Продукт 3</h4>
+                <p>Цена: 399 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 4 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://cdn.technomarket.bg/ng/media/cache/mid_thumb/uploads/marketplace/43/650711-1.jpg.webp" alt="Продукт 4" style="width: 280px; height: 280px;">
+                <h4>Продукт 4</h4>
+                <p>Цена: 499 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 5 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://cdncloudcart.com/32450/products/images/18955/veloergometar-k-fit-mount-image_6406909b70057_600x600.jpeg?1678151842" alt="Продукт 5" style="width: 280px; height: 280px;">
+                <h4>Продукт 5</h4>
+                <p>Цена: 599 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 6 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://nadaspa.eu/cdn/shop/products/1_5f3c21c4-1727-43b9-9a6e-efe3ea7d78d6_720x1000.jpg?v=1606237369" alt="Продукт 6" style="width: 280px; height: 280px;">
+                <h4>Продукт 6</h4>
+                <p>Цена: 699 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 7 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://sporti.bg/g/30/komplekt-dambeli-20-kg.webp" alt="Продукт 7" style="width: 280px; height: 280px;">
+                <h4>Продукт 7</h4>
+                <p>Цена: 799 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 8 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://homeco.bg/media/catalog/product/cache/520332c47eb5e742430b01c96310ed79/F/A/FA1002-0.jpg" alt="Продукт 8" style="width: 280px; height: 280px;">
+                <h4>Продукт 8</h4>
+                <p>Цена: 899 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 9 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://homeco.bg/media/catalog/product/cache/520332c47eb5e742430b01c96310ed79/F/A/FA1002-0.jpg" alt="Продукт 9" style="width: 280px; height: 280px;">
+                <h4>Продукт 9</h4>
+                <p>Цена: 999 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 10 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://via.placeholder.com/280" alt="Продукт 10" style="width: 280px; height: 280px;">
+                <h4>Продукт 10</h4>
+                <p>Цена: 1099 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 11 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://via.placeholder.com/280" alt="Продукт 11" style="width: 280px; height: 280px;">
+                <h4>Продукт 11</h4>
+                <p>Цена: 1199 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+            <!-- Продукт 12 -->
+            <div class="product-card" style="text-align: center;">
+                <img src="https://via.placeholder.com/280" alt="Продукт 12" style="width: 280px; height: 280px;">
+                <h4>Продукт 12</h4>
+                <p>Цена: 1299 лв.</p>
+                <div class="product-buttons">
+                    <button>Добави в количката</button>
+                    <button>Виж повече</button>
+                </div>
+            </div>
+           
+            
+            </div>
+        </div>
+    </div>
+</section>
+<section id="promotions" class="promotions-section">
+    <h2 class="promo-title">Специални промоции</h2>
+
+    <div class="promo-grid">
+     
+
+        <!-- Промоция 1 -->
+        <div class="promo-item">
+    <div class="promo-image">
+        <img src="https://beautyandpower.eu/6852-large_default/postelka-za-fitnes-i-joga.jpg" alt="Фитнес уред">
+        <span class="promo-badge">-20%</span>
+    </div>
+    <div class="promo-details">
+        <h3 class="promo-name">Фитнес уред</h3>
+        <p class="promo-pricing">
+            <span class="old-price">200 лв.</span>
+            <span class="new-price">160 лв.</span>
+        </p>
+        <button class="promo-button" onclick="openModal('modal1')">Виж повече</button>
+    </div>
+</div>
+		<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal1')">&times;</span>
+        <h2>Фитнес уред</h2>
+        <p>Тази постелка за фитнес и йога е идеална за вашите тренировки. Изработена от висококачествени материали, тя осигурява удобство и стабилност по време на упражненията.</p>
+    </div>
+</div>
+
+        <!-- Промоция 2 -->
+        <div class="promo-item">
+            <div class="promo-image">
+                <img src="path-to-your-image/product2.jpg" alt="Спортни обувки">
+                <span class="promo-badge">-15%</span>
+            </div>
+            <div class="promo-details">
+                <h3 class="promo-name">Спортни обувки</h3>
+                <p class="promo-pricing">
+                    <span class="old-price">120 лв.</span>
+                    <span class="new-price">102 лв.</span>
+                </p>
+                <button class="promo-button">Виж повече</button>
+            </div>
+        </div>
+
+        <!-- Промоция 3 -->
+        <div class="promo-item">
+            <div class="promo-image">
+                <img src="path-to-your-image/product3.jpg" alt="Тренировъчен комплект">
+                <span class="promo-badge">-17%</span>
+            </div>
+            <div class="promo-details">
+                <h3 class="promo-name">Тренировъчен комплект</h3>
+                <p class="promo-pricing">
+                    <span class="old-price">300 лв.</span>
+                    <span class="new-price">250 лв.</span>
+                </p>
+                <button class="promo-button">Виж повече</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="about" style="background: linear-gradient(135deg, var(--second-color) 50%, var(--main-color) 50%); padding: 50px 100px;">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 2rem; color: var(--text-color); margin-bottom: 10px; text-transform: uppercase;">За Нас</h2>
+        <p style="font-size: 1rem; color: var(--text-color); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            
+        </p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px;">
+        <!-- Ляв текст -->
+        <div style="flex: 1; max-width: 500px; padding: 20px;">
+            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-color); margin-bottom: 20px;">
+                <strong>Динамикс ЕООД</strong> – Вашият доверен партньор за иновации в продажбата на фитнес уреди. Подкрепяме активния и здравословен начин на живот, като предлагаме висококачествено оборудване за дома и професионални зали. Ние вярваме, че всеки заслужава възможността да води активен живот. Затова предоставяме надеждно обслужване, сигурни плащания и прозрачни условия, които вдъхват доверие у клиентите.
+            </p>
+            <p style="font-size: 1rem; line-height: 1.6; color: var(--text-color);">
+               
+            </p>
+        </div>
+        <!-- Десен елемент със снимки -->
+        <div style="flex: 1; max-width: 400px; position: relative;">
+            <div style="position: relative; z-index: 1;">
+                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Екипът на Динамикс" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);">
+            </div>
+            <div style="position: absolute; top: -20px; left: -20px; z-index: 0; background: var(--main-color); width: 100%; height: 100%; border-radius: 15px; transform: rotate(3deg);"></div>
+        </div>
+    </div>
+    <div style="margin-top: 40px; text-align: center;">
+        <h3 style="font-size: 1.5rem; color: var(--text-color); margin-bottom: 20px; text-transform: uppercase;">Нашият Екип</h3>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+            <!-- Ваша снимка -->
+            <div style="text-align: center;">
+                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Вашето име" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);">
+                <h4 style="font-size: 1.2rem; color: var(--text-color);">Вашето име</h4>
+                <p style="font-size: 0.9rem; color: var(--text-color);">Основател и мениджър</p>
+            </div>
+            <!-- Снимки на екипа -->
+            <div style="text-align: center;">
+                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Име на екипа" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);">
+                <h4 style="font-size: 1.2rem; color: var(--text-color);">Име на член от екипа</h4>
+                <p style="font-size: 0.9rem; color: var(--text-color);">Длъжност</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="https://knockoutbg.com/wp-content/uploads/2019/07/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%B0%D0%BD-%D0%A3%D1%80%D0%B5%D0%B4-%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80-Body-Solid-Gym-G1S-5-1.jpg" alt="Име на екипа" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);">
+                <h4 style="font-size: 1.2rem; color: var(--text-color);">Име на член от екипа</h4>
+                <p style="font-size: 0.9rem; color: var(--text-color);">Длъжност</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script>
+    // JavaScript for filtering products
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const filter = btn.dataset.filter;
+            productCards.forEach(card => {
+                if (filter === 'all' || card.classList.contains(filter)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+<script>
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'flex'; // Показва модала
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none'; // Скрива модала
+}
+
+// Затваряне на модала при клик извън него
+window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+};
+</script>
+
+    
+
+</body>
+</html>
+
