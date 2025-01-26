@@ -202,7 +202,6 @@
       <h2 class="promo-title">Специални промоции</h2>
 
       <div class="promo-grid">
-        <!-- Промоция 1 -->
         <script>
           promotions.forEach((promotion) => {
             const promoItem = `
@@ -222,23 +221,17 @@
                   </button>
                   </div>
               </div>
+              <div id="modal${promotion.id}" class="modal">
+                <div class="modal-content">
+                  <span class="close-button" onclick="closeModal('modal${promotion.id}')">&times;</span>
+                  <h2>${promotion.name}</h2>
+                  <p>${promotion.description}</p>
+                </div>
+                </div>
               `;
               document.write(promoItem);
             });
         </script>
-      </div>
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <span class="close-button" onclick="closeModal('modal1')"
-            >&times;</span
-          >
-          <h2>Фитнес уред</h2>
-          <p>
-            Тази постелка за фитнес и йога е идеална за вашите тренировки.
-            Изработена от висококачествени материали, тя осигурява удобство и
-            стабилност по време на упражненията.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -434,8 +427,8 @@
       });
     </script>
     <script>
-      function openModal(promoId) {
-        const modal = document.getElementById("modal1");
+      function openModal(modalId) {
+        const modal = document.getElementById(modalId);
         modal.style.display = "flex"; // Показва модала
       }
 
