@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Equipment Site</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+          <img
+            src="./img/dinamics-removebg-preview.png"
+            alt="Logo"
+          />
+        </a>
+        <ul class="navbar">
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="./products.html">Продукти</a></li>
+          <li><a href="#">Промоции</a></li>
+          <li><a href="./about.html">За нас</a></li>
+          <li><a href="./contact.html">Контакти</a></li>
+        </ul>
+        <div class="header-icon">
+          <div style="position: relative; display: inline-block;">
+              <a href="./cart.html"><i class="bx bx-cart-alt" style="font-size: 24px;"></i></a>
+              <span id="cartBadge"></span>
+            </div>
+          <i class="bx bx-search" id="search-icon"></i>
+        </div>
+        <div class="search-box">
+          <input type="search" name="" id="" placeholder="Search Here..." />
+        </div>
+      </header>
+    <div class="container" style="margin-bottom: 50px; margin-top: 70px">
+        <section id="promotions" class="promotions-section">
+            <h2 class="promo-title">Специални промоции</h2>
+      
+            <div class="promo-grid">
+              <script>
+                promotions.forEach((promotion) => {
+                  const promoItem = `
+                    <div class="promo-item">
+                      <div class="promo-image">
+                        <img src="${promotion.image}" alt="${promotion.name}" />
+                        <span class="promo-badge">-${promotion.discount}%</span>
+                      </div>
+                      <div class="promo-details">
+                        <h3 class="promo-name">${promotion.name}</h3>
+                        <p class="promo-pricing">
+                          <span class="old-price">${promotion.oldPrice} лв.</span>
+                          <span class="new-price">${promotion.newPrice} лв.</span>
+                        </p>
+                        <button class="promo-button" onclick="openModal('modalPromo${promotion.id}')">
+                          Виж повече
+                        </button>
+                        </div>
+                    </div>
+                    <div id="modalPromo${promotion.id}" class="modal">
+                      <div class="modal-content">
+                        <span class="close-button" onclick="closeModal('modalPromo${promotion.id}')">&times;</span>
+                        <h2>${promotion.name}</h2>
+                        <p>${promotion.description}</p>
+                      </div>
+                      </div>
+                    `;
+                  document.write(promoItem);
+                });
+              </script>
+            </div>
+          </section>
+    </div>
+    <footer>
+        &copy; Автор на сайта - Ванеса Георгиева
+    </footer>
+    <script>
+        updateCartBadge();
+    </script>
+</body>
+</html>
+

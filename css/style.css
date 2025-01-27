@@ -491,3 +491,7 @@ canvas {
     max-height: 80%;
   }
 
+.logo img{
+    width: 45px;
+    height: 45px;
+}

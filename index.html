@@ -20,14 +20,14 @@
     <header>
       <a href="#" class="logo">
         <img
-          src="C:\Users\Vanesa\Downloads\dinamics-removebg-preview.png"
+          src="./img/dinamics-removebg-preview.png"
           alt="Logo"
         />
       </a>
       <ul class="navbar">
         <li><a href="./index.html">Начало</a></li>
-        <li><a href="#products">Продукти</a></li>
-        <li><a href="#promotions">Промоции</a></li>
+        <li><a href="./products.html">Продукти</a></li>
+        <li><a href="./promo.html">Промоции</a></li>
         <li><a href="./about.html">За нас</a></li>
         <li><a href="./contact.html">Контакти</a></li>
       </ul>
@@ -53,152 +53,12 @@
           на живот. Промени рутината си днес!
         </p>
         <a
-          href="file:///C:/Users/Vanesa/OneDrive/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8/Tishev/new%201.html#products"
+          href="./products.html"
           class="btn"
           >Пазарувай сега</a
         >
       </div>
     </section>
-    <section
-      id="products"
-      style="padding: 50px 100px; background-color: var(--second-color)"
-    >
-      <h2
-        style="
-          font-size: 2rem;
-          color: var(--text-color);
-          margin-bottom: 20px;
-          text-transform: uppercase;
-          text-align: center;
-        "
-      >
-        Нашите продукти
-      </h2>
-      <div style="display: flex; gap: 20px">
-        <aside
-          style="
-            flex: 1;
-            max-width: 250px;
-            background: var(--second-color);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-          "
-        >
-          <h3
-            style="
-              font-size: 1.5rem;
-              margin-bottom: 20px;
-              text-transform: uppercase;
-              text-align: center;
-              color: var(--text-color);
-            "
-          >
-            Категории
-          </h3>
-          <div style="margin-bottom: 20px">
-            <h4
-              style="
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                color: var(--text-color);
-              "
-            >
-              Цена
-            </h4>
-            <ul style="list-style: none; padding: 0">
-              <script>
-                filters.filter(s => s.type === "price").sort((a, b) => a.orderNumber - b.orderNumber).forEach(key => {
-                    const filterItem = `
-                        <li>
-                            <a href="#" class="filter-btn" style="color: var(--text-color)" onclick="filterProducts(${key.id})">
-                                ${key.name}
-                            </a>
-                        </li>`;
-                    document.write(filterItem);
-                });
-              </script>
-            </ul>
-          </div>
-          <div>
-            <h4
-              style="
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                color: var(--text-color);
-              "
-            >
-              Типове фитнес уреди
-            </h4>
-            <ul style="list-style: none; padding: 0">
-                <script>
-                    filters.filter(s => s.type === "type").sort((a, b) => a.orderNumber - b.orderNumber).forEach(key => {
-                        const filterItem = `
-                            <li>
-                                <a href="#" class="filter-btn" style="color: var(--text-color)" onclick="filterProducts(${key.id})">
-                                    ${key.name}
-                                </a>
-                            </li>`;
-                        document.write(filterItem);
-                    });
-                  </script>
-            </ul>
-            <div id="appliedFilters"></div>
-          </div>
-        </aside>
-        <div
-          style="
-            flex: 3;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-          "
-          id="product-placeholder"
-        />
-        <script>
-            window.products = products;
-            renderProducts();
-            updateCartBadge();
-        </script>
-      </div>
-    </section>
-    <section id="promotions" class="promotions-section">
-      <h2 class="promo-title">Специални промоции</h2>
-
-      <div class="promo-grid">
-        <script>
-          promotions.forEach((promotion) => {
-            const promoItem = `
-              <div class="promo-item">
-                <div class="promo-image">
-                  <img src="${promotion.image}" alt="${promotion.name}" />
-                  <span class="promo-badge">-${promotion.discount}%</span>
-                </div>
-                <div class="promo-details">
-                  <h3 class="promo-name">${promotion.name}</h3>
-                  <p class="promo-pricing">
-                    <span class="old-price">${promotion.oldPrice} лв.</span>
-                    <span class="new-price">${promotion.newPrice} лв.</span>
-                  </p>
-                  <button class="promo-button" onclick="openModal('modalPromo${promotion.id}')">
-                    Виж повече
-                  </button>
-                  </div>
-              </div>
-              <div id="modalPromo${promotion.id}" class="modal">
-                <div class="modal-content">
-                  <span class="close-button" onclick="closeModal('modalPromo${promotion.id}')">&times;</span>
-                  <h2>${promotion.name}</h2>
-                  <p>${promotion.description}</p>
-                </div>
-                </div>
-              `;
-            document.write(promoItem);
-          });
-        </script>
-      </div>
-    </section>
-
     <section
       id="about"
       style="
@@ -375,5 +235,8 @@
     <footer>
         &copy; Автор на сайта - Ванеса Георгиева
     </footer>
+    <script>
+        updateCartBadge();
+    </script>
   </body>
 </html>

@@ -6,6 +6,11 @@ body {
     justify-content: space-between;
     height: 600px;
     background-color: #d0e7ff; /* Син фон за целия сайт */
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
 }
 .container {
     display: flex;

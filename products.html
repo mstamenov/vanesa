@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Equipment Site</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+          <img
+            src="./img/dinamics-removebg-preview.png"
+            alt="Logo"
+          />
+        </a>
+        <ul class="navbar">
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="#">Продукти</a></li>
+          <li><a href="./promo.html">Промоции</a></li>
+          <li><a href="./about.html">За нас</a></li>
+          <li><a href="./contact.html">Контакти</a></li>
+        </ul>
+        <div class="header-icon">
+          <div style="position: relative; display: inline-block;">
+              <a href="./cart.html"><i class="bx bx-cart-alt" style="font-size: 24px;"></i></a>
+              <span id="cartBadge"></span>
+            </div>
+          <i class="bx bx-search" id="search-icon"></i>
+        </div>
+        <div class="search-box">
+          <input type="search" name="" id="" placeholder="Search Here..." />
+        </div>
+      </header>
+    <div class="container" style="margin-bottom: 50px; margin-top: 70px">
+        <section
+      id="products"
+      style="padding: 50x 100px; background-color: var(--second-color)"
+    >
+      <h2
+        style="
+          font-size: 2rem;
+          color: var(--text-color);
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          text-align: center;
+        "
+      >
+        Нашите продукти
+      </h2>
+      <div style="display: flex; gap: 20px">
+        <aside
+          style="
+            flex: 1;
+            max-width: 250px;
+            background: var(--second-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3
+            style="
+              font-size: 1.5rem;
+              margin-bottom: 20px;
+              text-transform: uppercase;
+              text-align: center;
+              color: var(--text-color);
+            "
+          >
+            Категории
+          </h3>
+          <div style="margin-bottom: 20px">
+            <h4
+              style="
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: var(--text-color);
+              "
+            >
+              Цена
+            </h4>
+            <ul style="list-style: none; padding: 0">
+              <script>
+                filters.filter(s => s.type === "price").sort((a, b) => a.orderNumber - b.orderNumber).forEach(key => {
+                    const filterItem = `
+                        <li>
+                            <a href="#" class="filter-btn" style="color: var(--text-color)" onclick="filterProducts(${key.id})">
+                                ${key.name}
+                            </a>
+                        </li>`;
+                    document.write(filterItem);
+                });
+              </script>
+            </ul>
+          </div>
+          <div>
+            <h4
+              style="
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: var(--text-color);
+              "
+            >
+              Типове фитнес уреди
+            </h4>
+            <ul style="list-style: none; padding: 0">
+                <script>
+                    filters.filter(s => s.type === "type").sort((a, b) => a.orderNumber - b.orderNumber).forEach(key => {
+                        const filterItem = `
+                            <li>
+                                <a href="#" class="filter-btn" style="color: var(--text-color)" onclick="filterProducts(${key.id})">
+                                    ${key.name}
+                                </a>
+                            </li>`;
+                        document.write(filterItem);
+                    });
+                  </script>
+            </ul>
+            <div id="appliedFilters"></div>
+          </div>
+        </aside>
+        <div
+          style="
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+          "
+          id="product-placeholder"
+        />
+        <script>
+            window.products = products;
+            renderProducts();
+        </script>
+      </div>
+    </section>
+    </div>
+    <footer>
+        &copy; Автор на сайта - Ванеса Георгиева
+    </footer>
+    <script>
+        updateCartBadge();
+    </script>
+</body>
+</html>
+
