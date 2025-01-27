@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+    background-color: #d0e7ff; /* Син фон за целия сайт */
+}
+.container {
+    display: flex;
+    width: 100vw;
+    height: 600px; /* Ограничаваме височината до 600px */
+}
+.info {
+    width: 30%;
+    background-color: #99c0ff;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрираме съдържанието по хоризонтала */
+    justify-content: center; /* Центрираме съдържанието по вертикала */
+    text-align: center; /* Центрираме текста */
+}
+.info h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.info p {
+    margin: 5px 0;
+}
+.info .icon {
+    margin-right: 10px;
+}
+.form-container {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Сив фон за формата */
+    border-radius: 8px; /* Закръглени ъгли за по-добър вид */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лек сянка за по-добър контраст */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрираме съдържанието по хоризонтала */
+}
+input, textarea {
+    padding: 10px;
+    margin-bottom: 10px; /* Намаляваме малко отстоянията, за да се впише по-добре */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%; /* Полетата за въвеждане да заемат 100% от ширината на контейнера */
+}
+textarea {
+    height: 220px; /* Намаляваме височината на полето за съобщение */
+}
+.submit-btn {
+    background-color: #4caeff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 200px; /* Задаваме ширина на бутона */
+    text-align: center; /* Центрираме текста на бутона */
+}
+.submit-btn:hover {
+    background-color: #0080ff;
+}
+.map {
+    width: 30%;
+    height: 100%; /* Запазваме височината на картата в рамките на контейнера */
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

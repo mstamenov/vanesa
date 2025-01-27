@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Equipment Site</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="js/data.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+          <img
+            src="C:\Users\Vanesa\Downloads\dinamics-removebg-preview.png"
+            alt="Logo"
+          />
+        </a>
+        <ul class="navbar">
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="#products">Продукти</a></li>
+          <li><a href="#promotions">Промоции</a></li>
+          <li><a href="#">За нас</a></li>
+          <li><a href="./contact.html">Контакти</a></li>
+        </ul>
+        <div class="header-icon">
+          <div style="position: relative; display: inline-block;">
+              <a href="./cart.html"><i class="bx bx-cart-alt" style="font-size: 24px;"></i></a>
+              <span id="cartBadge"></span>
+            </div>
+          <i class="bx bx-search" id="search-icon"></i>
+        </div>
+        <div class="search-box">
+          <input type="search" name="" id="" placeholder="Search Here..." />
+        </div>
+      </header>
+    <div class="container" style="margin-top: 130px;">
+        <canvas id="myChart" width="600" height="400"></canvas>
+  <script>
+    // Get the canvas element
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    // Create a bar chart
+    new Chart(ctx, {
+      type: 'line', // Chart type
+      data: {
+        labels: ['2021', '2022', '2023', '2024', '2025'], // Labels for the x-axis
+        datasets: [{
+          label: 'Продажби за период от 5 години',
+          data: [12000, 19000, 10000, 14000, 3000], // Data points
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true // Start the y-axis at 0
+          }
+        }
+      }
+    });
+  </script>
+    </div>
+    <footer>
+        &copy; Автор на сайта - Ванеса Георгиева
+    </footer>
+    <script>
+        updateCartBadge();
+    </script>
+</body>
+</html>
+

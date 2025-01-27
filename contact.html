@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Equipment Site</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="js/data.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+          <img
+            src="C:\Users\Vanesa\Downloads\dinamics-removebg-preview.png"
+            alt="Logo"
+          />
+        </a>
+        <ul class="navbar">
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="#products">Продукти</a></li>
+          <li><a href="#promotions">Промоции</a></li>
+          <li><a href="./about.html">За нас</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+        <div class="header-icon">
+          <div style="position: relative; display: inline-block;">
+              <a href="./cart.html"><i class="bx bx-cart-alt" style="font-size: 24px;"></i></a>
+              <span id="cartBadge"></span>
+            </div>
+          <i class="bx bx-search" id="search-icon"></i>
+        </div>
+        <div class="search-box">
+          <input type="search" name="" id="" placeholder="Search Here..." />
+        </div>
+      </header>
+    <div class="container" style="margin-top: 130px;">
+        <!-- Left side - Info Section -->
+        <div class="info">
+            <h1>Vanesa Georgieva</h1>
+            <p><span class="icon">📍</span> Кайнарджа 33 гр. Казанлък</p>
+            <p><span class="icon">📞</span> 0856521478</p>
+            <p><span class="icon">✉️</span> vanesa_g@abv.bg</p>
+        </div>
+
+        <!-- Center - Form Section -->
+        <div class="form-container">
+            <h2>Email Us</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="982f2dd2-cf1a-421a-b290-5b88b707d600">
+
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="company" placeholder="Company">
+                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button type="submit" class="submit-btn">SUBMIT</button>
+		
+            </form>
+        </div>
+
+        <!-- Right side - Map Section -->
+        <div class="map">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.182855487791!2d25.38224607658974!3d42.61507781895143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a853f6cf93ac2b%3A0xa6c20b4d7ba11b10!2z0JzQsNC90LDRgdGC0LjRgNCwLCDRg9C7LiDigJ7QmtCw0LnQvdCw0YDQtNC20LDigJwgMzMsIDYxMDAg0JrQsNC30LDQvdC70YrQug!5e0!3m2!1sbg!2sbg!4v1726649426162!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <footer>
+        &copy; Автор на сайта - Ванеса Георгиева
+    </footer>
+    <script>
+        updateCartBadge();
+    </script>
+</body>
+</html>
+

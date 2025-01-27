@@ -4,7 +4,7 @@ const products = [
     name: "Продукт 1",
     price: 199,
     image: "https://pulsefit.bg/uploads/tinymce/58069.jpg",
-    description: "Описание на продукт 1",
+    description: "Описание на <i>продукт</i> 1",
     type: "cardio",
   },
   {
