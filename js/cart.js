@@ -72,3 +72,13 @@ function removeFromCart(productId){
     renderCart();
     updateCartBadge();
 }
+
+function getCartItems(){
+    const cart = JSON.parse(localStorage.getItem(cartIdentifier)) || [];
+    return cart;
+}
+
+function clearCartItems(){
+    localStorage.removeItem(cartIdentifier);
+    updateCartBadge();
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Equipment Site</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <!--add js reference-->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/common.js"></script>
+    <script src="/js/products.js"></script>
+    <script src="js/checkout.js"></script>
+  </head>
+  <body style="justify-content: center;
+    align-items: center;
+    background-color: #d0e7ff;
+    display: flex
+    ;">
+    <header>
+      <a href="#" class="logo">
+        <img
+          src="./img/dinamics-removebg-preview.png"
+          alt="Logo"
+          
+        />
+      </a>
+      <ul class="navbar">
+        <li><a href="./index.html">Начало</a></li>
+        <li><a href="./products.html">Продукти</a></li>
+        <li><a href="./promo.html">Промоции</a></li>
+        <li><a href="./about.html">За нас</a></li>
+        <li><a href="./contact.html">Контакти</a></li>
+      </ul>
+      <div class="header-icon">
+        <div style="position: relative; display: inline-block;">
+          <a href="./cart.html"><i class="bx bx-cart-alt" style="font-size: 24px;"></i></a>
+          <span id="cartBadge"></span>
+          </div>
+        <i class="bx bx-search" id="search-icon"></i>
+      </div>
+      <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here..." />
+      </div>
+    </header>
+    
+      <div class="container" style="margin-bottom: 60px;">
+        <h2
+          style="
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+          "
+        >
+        Адрес за доставка
+        </h2>
+        <div id="cartProducts" class="cart-items" style="display: flex; flex-direction: column;">
+        </div>
+        <div style="min-height: 20px;"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <form id="form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="0ba99f5b-6e3d-4613-b197-136b76a86492">
+            <input type="text" name="country" required placeholder="Държава">
+            <input type="text" name="city" required placeholder="Град">
+            <input type="text" name="street" required placeholder="Улица">
+            <input type="text" name="number" required placeholder="Номер">
+            <textarea name="message" placeholder="Забележка"></textarea>
+            <a href="#" onClick="submitForm()">Приключи</a>
+          </form>
+        </div>
+      </div>
+    <footer>
+      <a href="./author.html" >Автор на сайта - Ванеса Георгиева</a>
+    </footer>
+    <script>
+        updateCartBadge();
+    </script>
+  </body>
+</html>
