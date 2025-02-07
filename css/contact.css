@@ -17,6 +17,7 @@ body {
     width: 100vw;
     height: 600px; /* Ограничаваме височината до 600px */
 }
+
 .info {
     width: 30%;
     background-color: #99c0ff;

@@ -444,6 +444,10 @@ footer {
     width: 100%;
 }
 
+footer a {
+    color: white;
+}
+
 img.product-frame {
     width: 280px;
     height: 280px;
@@ -494,4 +498,75 @@ canvas {
 .logo img{
     width: 45px;
     height: 45px;
+}
+
+img.author{
+    width: 150px;
+    border-radius: 75px;
+   
+}
+
+.author-container{
+    display: flex;
+    margin-top: 30px;
+    gap: 40px;
+    align-items: center;
+}
+
+.inner-container{
+    width: 100%;
+}
+
+.row-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+
+.full-width {
+}
+
+/* Second Row - Three Equal Columns */
+.row-2 {
+    display: flex;
+    width: 100%;
+    gap: 10px; /* Optional spacing */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+
+.col {
+    width: 33.33%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+}
+
+.projects{
+    margin-top: 50px;
+}
+
+ul.project-list li::before {
+    content: "★ "; /* Star symbol as bullet */
+    color: gold;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.col.abv {
+    background: white;
+    padding: 20px;
+} 
+
+.col.sport{
+    background-color: #F3F3F3;
+    padding:20px;
+}
+
+.col p{
+    text-align: justify;
 }
