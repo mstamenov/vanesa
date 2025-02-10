@@ -569,3 +569,9 @@ ul.project-list li::before {
 .col p{
     text-align: justify;
 }
+
+div.about-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
